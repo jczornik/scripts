@@ -28,7 +28,9 @@ def format_issue_as_html_link(issue):
 
 
 def print_help():
-    pass
+    print("""Syntax is:
+    main.py -u <user> - r <repo>
+    """)
 
 
 def parse_input_parameters(argv):
