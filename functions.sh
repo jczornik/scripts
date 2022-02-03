@@ -17,3 +17,9 @@ append_to_autostart_awesomewm () {
 
     echo $command >> "$HOME/.config/awesome/autostart.sh"
 }
+
+create_path_if_doesnt_exist () {
+    local path="$1"
+
+    [ ! -d "$path" ] && mkdir -p "$path"
+}
