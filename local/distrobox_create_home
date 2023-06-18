@@ -4,7 +4,6 @@ set -euo pipefail
 shopt -s inherit_errexit
 
 readonly BOX_NAME=$1
-readonly IMAGE=$2
 readonly USER_HOME="/home/$(whoami)"
 readonly BOX_HOME="${USER_HOME}/.distrobox_homes/${BOX_NAME}"
 readonly BOX_FONTS_PATH="${BOX_HOME}/.local/share/fonts"
@@ -13,5 +12,3 @@ mkdir -p "${BOX_HOME}"
 ln -s "${USER_HOME}/.emacs.d" "${BOX_HOME}"
 mkdir -p "${BOX_FONTS_PATH}"
 ln -s ~/.local/share/fonts/* "${BOX_FONTS_PATH}"
-
-distrobox create -n "$BOX_NAME" -i "$IMAGE" --home "$BOX_HOME"
